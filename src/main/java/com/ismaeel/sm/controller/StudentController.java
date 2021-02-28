@@ -8,18 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.ismaeel.sm.api.Student;
-import com.ismaeel.sm.dao.StudentDao;
+import com.ismaeel.sm.service.StudentService;
 
 @Controller
 public class StudentController {
 
 	@Autowired
-	StudentDao dao;
+	StudentService studentService;
 	
 	@GetMapping("/student-list")
 	public String getStudentList(Model model)
 	{
-		List<Student> studentList = dao.fetchAll();
+		List<Student> studentList = studentService.loadStudents();
 		
 		studentList.forEach(s -> System.out.println(s));
 		
@@ -39,7 +39,7 @@ public class StudentController {
 	public String addStudent(Student student)
 	{		
 		System.out.println(student);
-		dao.saveStudent(student);
+		studentService.insertStudent(student);
 		return "redirect:/student-list";
 	}
 	
