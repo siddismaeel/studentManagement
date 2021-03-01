@@ -21,8 +21,31 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public void insertStudent(Student student) {
-		studentDao.saveStudent(student);
+		
+		
+			studentDao.saveStudent(student);
+		
 
+	}
+
+	@Override
+	public Student getStudent(int id) {
+		
+		return studentDao.getStudent(id);
+	}
+
+	@Override
+	public void updateStudent(Student student) {
+		
+		studentDao.updateStudent(student);
+		
+	}
+
+	@Override
+	public void deleteStudent(int id) {
+
+		studentDao.deleteStudent(id);
+		
 	}
 
 }

@@ -34,6 +34,9 @@
   		<td>${student.name}</td>
   		<td>${student.mobile}</td>
   		<td>${student.address}</td>
+		<td><a href="update-student?id=${student.id}">Update</a></td>
+		<td><a href="delete-student?id=${student.id}" onclick="if(!confirm('Really you want to delete')) return false">Delete</a></td>
+		
   	</tr>
   	</c:forEach>
   </table>

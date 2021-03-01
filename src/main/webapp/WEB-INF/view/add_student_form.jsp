@@ -16,6 +16,7 @@
 	<table>
 	
 	<tr>
+		<form:hidden path="id"/>
 		<td><label>Name: </label></td>
 		<td> <form:input path="name"/></td>
 	</tr>
